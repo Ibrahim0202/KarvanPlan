@@ -1,0 +1,35 @@
+﻿@page
+@model KarvanPlan.Pages.PlanReports.PlanModel
+
+<h1>My Page</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="ay">Ay:</label>
+        <input type="number" class="form-control" id="ay" name="Ay" asp-for="Ay" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrele</button>
+</form>
+
+@if (Model.DataList != null && Model.DataList.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Column1</th>
+                <th>Column2</th>
+                <!-- Diğer sütunlar -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DataList)
+            {
+                <tr>
+                    <td>@item.Ad</td>
+                    <td>@item.</td>
+                    <!-- Diğer sütunlar -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
